@@ -11,13 +11,13 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
-    # container:
+    # container:                              # main application isn't executed in container
     #   image: node:16
     services:
       mongodb:
         image: mongo
         ports:
-          - 9090:27017                          #Internal port : exposed port
+          - 9090:27017                          #Externally exposed port : internal port
         env: 
           MONGO_INITDB_ROOT_USERNAME: root
           MONGO_INITDB_ROOT_PASSWORD: example
